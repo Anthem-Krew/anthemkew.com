@@ -3,7 +3,7 @@
 
 ([Français](#anthemkewcomfr))
 
-# anthemkew.com(en)
+# anthemkew.com [en]
 
 Static website where the Anthem manifesto is hosted
 ______________________
@@ -12,6 +12,6 @@ ______________________
 
 ([English](#anthemkewcomen))
 
-# anthemkew.com(fr)
+# anthemkew.com [fr]
 
 Site Web statique où est hébergé le manifeste d'Anthem
