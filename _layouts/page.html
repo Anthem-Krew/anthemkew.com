@@ -1,0 +1,31 @@
+---
+layout: default
+---
+{% if page.secondarymenu == true %}
+<div class="container">
+  <div class="row">
+    <main property="mainContentOfPage" class="col-md-9 col-md-push-3" typeof="WebPageElement">
+{% else %}
+    <main property="mainContentOfPage" class="{% unless page.noMainContainer %}container{% endunless %}" typeof="WebPageElement">
+{% unless page.noContentTitle %}
+  {% assign navclass = page.pageclass | split: " " %}
+  {% unless navclass contains "page-type-nav" %}
+      <h1 property="name" id="ak-cont">{{ page.contentTitle }}</h1>
+  {% endunless %}
+{% endunless %}
+      {{ content }}
+{%if page.dateModified %}
+  {% include datemodified.html %}
+{% else %}
+  {% assign date= "now" | date: "%Y-%m-%d" %}
+  {% include datemodified.html content=date %}
+{% endif %}
+</main>
+{% if page.secondarymenu == true %}
+  <nav class="ak-sec col-md-3  col-md-pull-9" typeof="SiteNavigationElement" id="ak-sec" role="navigation">
+    <h2 id="ak-sec-h" class="sr-only">{{ page.i18n.tmpl-section-menu[page.lang] }}</h2>
+    {% include secondarymenu.html %}
+  </nav>
+</div>
+</div>
+{% endif %}
